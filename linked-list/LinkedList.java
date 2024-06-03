@@ -10,9 +10,8 @@ class LinkedList{
 			this.data = val;
 			nextNode = null;
 		}
-
-		Node head;
 	}
+	Node head;
 
 	//Insert node method
 	public void insertNode(int data){
@@ -24,10 +23,13 @@ class LinkedList{
 		}
 		else{
 			Node tempNode = this.head;
-			while(tempNode!=null)
+			while(tempNode.nextNode!=null)
 			{
 				tempNode = tempNode.nextNode;
 			}
+
+			tempNode.nextNode = newNode;
+
 		}
 	}
 
@@ -55,7 +57,6 @@ class LinkedList{
 		list.insertNode(30);
 		list.insertNode(40);
 		list.insertNode(50);
-
 		//print llist
 		list.printLList();
 	}

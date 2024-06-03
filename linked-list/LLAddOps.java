@@ -1,6 +1,5 @@
 class LLAddOps {
 
-
 	//linked list node
 	class Node{
 		int data;
@@ -17,13 +16,14 @@ class LLAddOps {
 
 	//insert Node
 	public void insertNode(int data){
-		Node newNode = new Node(data);
 
+		Node newNode = new Node(data);
 		if(this.head == null){
 			this.head = newNode;
-		}else{
+		}
+		else
+		{
 			Node tempHead = this.head;
-
 			while(tempHead.nextNode!=null){
 				tempHead = tempHead.nextNode;
 			}
@@ -38,7 +38,9 @@ class LLAddOps {
 		
 		if(this.head == null){
 			this.head = newNode;
-		}else{
+		}
+		else
+		{
 			Node tempNode = this.head;
 			newNode.nextNode = tempNode;
 			this.head = newNode;
@@ -58,7 +60,8 @@ class LLAddOps {
 	
 
 	public static void main(String arg []){
-		System.out.println("**************"+"Inserting Node at Begning of Linked List"+"******************");
+
+		System.out.println("Inserting Node at Begning of Linked List");
 
 		LLAddOps list = new LLAddOps();
 

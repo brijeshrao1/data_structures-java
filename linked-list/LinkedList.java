@@ -11,17 +11,19 @@ class LinkedList{
 			nextNode = null;
 		}
 	}
+
 	Node head;
 
 	//Insert node method
 	public void insertNode(int data){
 
 		Node newNode = new Node(data);
-
+		
 		if(this.head==null){
 			this.head = newNode;
 		}
-		else{
+		else
+		{
 			Node tempNode = this.head;
 			while(tempNode.nextNode!=null)
 			{

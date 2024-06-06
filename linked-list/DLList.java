@@ -5,9 +5,10 @@ class DLList{
 	private int size;
 
 	DLList(){
-		size =0;
+		size = 0;
 	}
 
+	//Doubly linked list node structure
 	class Node{
 		int data;
 		Node nextNode;
@@ -26,7 +27,7 @@ class DLList{
 		}
 	}
 
-	//insert first Node in doubly linked list
+	//Insert first Node in doubly linked list
 	public void insertAtStart(int val){
 		Node newNode = new Node(val);
 
@@ -39,7 +40,7 @@ class DLList{
 		head = newNode;
 	}
 
-	//insert Last Node in doubly linked list
+	//Insert Last Node in doubly linked list
 	public void insertAtLast(int val){
 		Node newNode = new Node(val);
 		Node lastNode = head;
@@ -58,16 +59,88 @@ class DLList{
 		}
 		lastNode.nextNode = newNode;
 		newNode.prevNode = lastNode;
+		size+=1;
 	}
 
-	//insert at any pos in after particular value doubly linked list
-	public void insertAtIndex(int val){
+	//Insert at any pos in after particular value doubly linked list
+	public void insertAtIndex(int val,int index){
+		Node newNode = new Node(val);
 
+		//Check for the first case if DLL is empty
+		if(head==null && index==0){
+			head = newNode;
+			size+=1;
+		}else{
+			if(size<=index||index<0||head==null){
+				System.out.println("ERROR: Invalid index "+index+" Please enter the index range  between {0 to "+size+"}");
+				return;
+			}
+			Node tempNode = head;
+			int countIndex =0;
+			while(tempNode!=null && countIndex <=index){
+				tempNode = tempNode.nextNode;
+				countIndex+=1;
+			}
+		}
+
+	}
+
+	//Search in doubly linked list and return value
+	public boolean  search(int val){
+		Node tempNode = head;
+
+		while(tempNode!=null && tempNode.data != val){
+			tempNode = tempNode.nextNode;
+		}
+
+		if (tempNode.data == val) {
+			return true;
+		}
+		return false;
+	}
+
+	//Search in doubly linked list and return node
+	public Node searchNode(int val){
+
+		Node tempNode = head;
+
+		while(tempNode!=null && tempNode.data != val){
+			tempNode = tempNode.nextNode;
+		}
+
+		if (tempNode.data == val) {
+			return tempNode;
+		}
+		return null;
+
+	}
+
+	//Insert After the some particular value;
+	public void insertAfter(int val, int after){
+		Node insertAfterNode = searchNode(after);
+		
+		if(insertAfterNode == null){
+			System.out.println("not found");
+			return;
+		}
+
+		Node newNode = new Node(val);
+
+		newNode.nextNode =insertAfterNode.nextNode;
+		insertAfterNode.nextNode = newNode;
+		newNode.prevNode = insertAfterNode;
+
+		if(newNode.nextNode!=null){
+			newNode.nextNode.prevNode = newNode;
+		}
+		size+=1;
 	}
 
 	//print the doubly linked using next list
 	public void dispalyNext(){
+
 		Node tempNode = head;
+		System.out.println("Length of Doubly linked list is: "+ this.size);
 		while (tempNode!=null){
 			System.out.print(tempNode.data+"->");
 			tempNode = tempNode.nextNode;
@@ -94,18 +167,20 @@ class DLList{
 
 	public static void main(String argc []){
 
-		System.out.println("Doubly Linked List");
-		DLList list = new DLList();
-
-		list.insertAtStart(50);
-		list.insertAtStart(40);
-		list.insertAtStart(30);
-		list.insertAtStart(20);
-		list.insertAtStart(10);
-		list.insertAtLast(60);
-	
+		DLList list = new DLList();	
+		list.insertAtLast(10);
+		list.insertAtLast(20);
+		list.insertAtLast(30);
+		list.insertAtLast(40);
+		list.insertAtLast(50);
+		// list.insertAtIndex(0,3);
 		list.dispalyNext();
-		// list.dispalyPrev();
+		list.insertAfter(22,20);
+		list.dispalyNext();
+		
+		System.out.println(list.search(20));
+		System.out.println(list.searchNode(20));
+
 	}
 
 }

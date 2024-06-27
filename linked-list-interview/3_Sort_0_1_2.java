@@ -1,6 +1,6 @@
 // Sort the 0's,1's and 2's in LL
 
-// #1 Bruteforce (Using Data Replacement)
+
 /*
 class Node
 {
@@ -13,7 +13,7 @@ class Node
     }
 }
 */
-
+// #1 Bruteforce (Using Data Replacement)
 /*Explaination*/
 /*
  * Take 3 counters named as count0,count1 and count2;

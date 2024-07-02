@@ -46,13 +46,28 @@ class Solution {
     }
 }
 
-/**Optimized:(Tortoise and Hare Algo)*/
+// #2 Optimized(Tortoise and Hare Algo):
+
 /*Explaination*/
-/* 
-	- Take to pointers slow and Fast (ie Slow will move by 1 step and Fast will be moved by 2 steps.   
-    **Note:** 
+/*  **Note:** 
     - for Even = at end of traversal fast will be null.
     - for odd = at end of traversal fast will be at last node.
+
+	- Take to pointers slow and Fast (ie Slow will move by 1 step and Fast will be moved by 2 steps.   
     - When fast pointer reaches to any of above two places stop then and there. return the node which is being pointed by slow pointer. 
     (Slow pointer will be pointing to the middle node).
 */
+
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}

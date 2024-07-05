@@ -13,7 +13,7 @@
 
 // #1 Bruteforce (using n/2)
 /*Explaination*/
-/* s
+/* 
 	Hint: You have to just find node just before the middle node.
 	- Traverse  and find the length(n) of ll.
 	- Now again traverse through the ll and keep decreasing the count so that it you reach to node just before the middle node.

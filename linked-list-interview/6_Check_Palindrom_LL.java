@@ -13,9 +13,9 @@
 
 // #1 Bruteforce (Using Using Stack)
 /*Explaination*/
-/* Create a tempNode and Stack and traverse through the ll and push elements into the stack from ll
- * Reinitalize the tempNode with head and traverse again through the ll and compare the element with top of stack 
- * if all elements are equal then return true else false
+/* Create a tempNode and Stack and traverse through the ll and push elements into the stack from ll.
+ * Reinitalize the tempNode with head and traverse again through the ll and compare the element with top of stack .
+ * if all elements are equal then return true else false.
 */
 class Solution {
     public boolean isPalindrome(ListNode head) {
@@ -49,9 +49,9 @@ class Solution {
 // #1 Optimized Soln (Comparing Fist Half and Second Half)
 /*Explaination*/
 /* First of all find the middle of ll using Fast and Slow Pointer(Fast by 2 and Slow by 1).
- * Riverse the second Half(Note For Reversing the Linked List will pass slow.next)
- * Compare the Second Half and First Half and return true or fase accordingly
- NOTE: Incase of Odd LL fast will stop at the last node of ll but Incase of Even LL fast will stop at the second last node 
+ * Riverse the second Half(Note For Reversing the Linked List will pass slow.next).
+ * Compare the Second Half and First Half and return true or fase accordingly.
+ NOTE: Incase of Odd LL fast will stop at the last node of ll but Incase of Even LL fast will stop at the second last node.
 */
 class Solution {
     public ListNode reverseLL(ListNode nextHalfHead){

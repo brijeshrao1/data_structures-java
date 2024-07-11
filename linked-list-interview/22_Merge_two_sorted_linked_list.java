@@ -19,7 +19,7 @@
 // #1 Bruteforce (Using Array)
 /*Explaination*/
 /* 
-	Approach: Take elements from l1 and l2 and push inot array then sort and Merge them.
+	Approach: Take elements from l1 and l2 and push into array then sort and Merge them.
 	- Traverse through the both ll and insert all those element into the array.
 	- Sort the array
 	- Convert the sorted array into linked list.
@@ -68,7 +68,9 @@ public class Solution {
 // #2 Optimized (Using Two Pointers)
 /*Explaination*/
 /* 
-	- 
+	- create a dummyNode and two pointer (pointing to the l1 and l2)
+	- Traverse both ll and keep compairing the data 
+	- link the nodes to dummyNode and return the new nodes
 */
 
 /*Java Solution*/

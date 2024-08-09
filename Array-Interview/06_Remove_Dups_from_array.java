@@ -34,7 +34,9 @@ public class Solution {
 // #2 Optimized (Two Pointer)
 /*Explaination*/
 /* 
-
+  - Take two pointers pointing to the first and second element of the array traverse and compare the elements pointed by pointers.
+  - Move the first pointer when arr[first] ≠ arr[second]. If it is equal move only the second.
+  - At last first pointer will give you the length of the resultant array.
 */
 
 class Solution {

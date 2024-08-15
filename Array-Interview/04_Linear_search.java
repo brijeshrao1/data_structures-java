@@ -6,7 +6,7 @@
 	- Traverese throught the array and compare the K with all elements of array 
 	- if you found K then return 1 else -1
 
-	-Complexity Analysis
+	**Complexity Analysis**
 	  -Time complexity  : O(n)
       -Space complexity : O(1)
 */
